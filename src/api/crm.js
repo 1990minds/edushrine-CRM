@@ -1,17 +1,9 @@
-// import React from 'react'
-
-// export default function crm() {
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios'
 // import {message} from 'antd'
 import { logDOM } from '@testing-library/react';
 import { keyUri } from '../key';
+import { useToast } from 'react-toastify';
 
 export const initialState = {
 
@@ -157,6 +149,7 @@ export const  deleteCrm = (id) => async dispatch =>{
 export const  updateCrm = (id, values) => async dispatch =>{
     const key = "crm"
     dispatch(getCrm())
+    const toast=useToast
     // message.loading({ content: 'loading...', key })
     
   try {
@@ -164,6 +157,7 @@ export const  updateCrm = (id, values) => async dispatch =>{
       const {data} = await axios.put(keyUri.BACKEND_URI +`/crm/${id}`, values, config);
     //   data && message.success({ content: data.msg, key, duration: 2 });
       // window.location.reload()
+
       dispatch(fetchAllCrm())
 
   } catch ({response}) {
