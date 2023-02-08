@@ -4,6 +4,7 @@ import axios from 'axios'
 import { logDOM } from '@testing-library/react';
 import { keyUri } from '../key';
 import { useToast } from 'react-toastify';
+import { MdVerticalAlignBottom } from 'react-icons/md';
 
 export const initialState = {
 
@@ -67,10 +68,12 @@ export const  fetchAllCrm = () => async dispatch =>{
     try {
 
         const {data} = await axios.get(keyUri.BACKEND_URI +'/crm');
-        // console.log(data)
-        const newData=data.filter((item)=>{
-          return item.status==='New'
-        })
+        console.log(data)
+        const branches = JSON.parse(localStorage.getItem('userBranch'))
+        console.log(branches)
+        const newData=data?.filter((item)=>{
+          return  item.status=="New"
+          }) 
         console.log({newData})
         dispatch(getCrmSuccess(newData))
 

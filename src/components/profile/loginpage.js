@@ -18,11 +18,11 @@ export default function Loginpage() {
     useEffect(()=>{
       if(!isAuthenticate){
           // window.location.href = '/user-profile'
-          console.log('first')
+          // console.log('first')
           history('/')
       }else{
           // history.push('/')
-          console.log("second")
+          // console.log("second")
           history('/mainpage')
       }
   },[isAuthenticate]) 
