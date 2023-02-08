@@ -135,7 +135,7 @@ export const logOut = () => async dispatch =>{
 
 
 export const fetchlogin = (logindata) => async dispatch =>{
-  console.log(logindata)
+  // console.log(logindata)
 
     const key = 'login';
     dispatch(getlogin())

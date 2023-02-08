@@ -53,12 +53,14 @@ export default function Sectionone() {
 
   useEffect(()=>{
     const branchItem=crm.filter((item)=>{
-      return branches.map((res)=>{
-        return item.branch._id == res._id
+      return branches.find((res)=>{
+        return item.branch._id === res._id
       })
     })
+    console.log(branchItem)
     setList(branchItem)
   },[crm,branches])
+  console.log(list)
 
   useEffect(()=>{
     if(search){

@@ -5,7 +5,14 @@ import {CgProfile} from 'react-icons/cg'
 import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { logOut } from '../../api/authSlice'
-import {Select} from '@chakra-ui/react'
+import {Button, Select} from '@chakra-ui/react'
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+import {MdOutlineLogout} from 'react-icons/md'
 
 export default function Navbar() {
   const [dropevent, setDropevent] = useState(false)
@@ -23,31 +30,25 @@ export default function Navbar() {
     <div class="w-full xl:w-auto px-2">
       <div class="flex items-center justify-between">
         <a class="inline-flex items-center" href="/">
-          <img class="h-16" src={Edulogo} alt=""/>
+          <img class="h-12 " src={Edulogo} alt=""/>
         </a>
-        
       </div>
     </div>
     
 
     <div class="mt-5">
-  
-    <div className=' text-red-600 text-3xl mr-10'> <CgProfile onClick={()=>setDropevent(!dropevent)}/></div>
+    <Menu>
+  <MenuButton  className=' text-red-600 text-3xl mr-10'>
+  <CgProfile onClick={()=>setDropevent(!dropevent)}/>
+  </MenuButton>
+  <MenuList maxWidth={'50px'}>
+    <MenuItem onClick={logOutHandler} className='flex justify-between'><b>Logout </b><span className='text-lg'><MdOutlineLogout/></span></MenuItem>
 
-  {dropevent && <div className="dropdown_menu">
-  <ul class="mt-2 font-bold">
+  </MenuList>
+</Menu>
 
-<li className="flex text-gray-800  text-md rounded-lg  shrink-0 " onClick={logOutHandler} >Logout</li>
-
-  </ul>
-  </div>}
   </div>
-
-
-
-      </nav>
-  {/* -------------------------------------------------- */}
-  
+      </nav>  
 </section>
     </div>
   )

@@ -106,7 +106,7 @@ const FooterWrap = styled.div`
     height: 3.0rem;
     position: fixed;
     bottom: 0%;
-    left:0%
+    left:0%;
     margin-Top:0px;
     z-index:40
 }
