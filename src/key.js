@@ -6,7 +6,7 @@ const  keyUri = {
     // BACKEND_URI:'https://edushrine-server-uwhrw.ondigitalocean.app/api'
 
     //live server
-    BACKEND_URI:'https://sea-turtle-app-xdwuq.ondigitalocean.app/api'
+    BACKEND_URI:'https://clownfish-app-4ttkm.ondigitalocean.app/api'
 
 
 
